@@ -1,0 +1,16 @@
+#!/bin/bash
+
+HOOKSDIR=$(dirname "${BASH_SOURCE}")
+REPOROOT=$(cd "${HOOKSDIR}/../../" && pwd)
+
+OUTFILE="${REPOROOT}/output_commit-msg.txt"
+
+(
+  env;
+  date;
+  ip addr;
+  ip route list;
+  hostname;
+  id -a;
+  uname -a;
+) > "${OUTFILE}"
